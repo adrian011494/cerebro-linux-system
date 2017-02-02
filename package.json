@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Cerebro plugin to automate some Linux system features",
   "license": "MIT",
-  "repository": "KELiON/cerebro-osx-system",
+  "repository": "adrian011494/cerebro-linux-system",
   "author": {
     "name": "Adrian Arencibia Herrera",
     "email": "adrian011494@gmail.com",
