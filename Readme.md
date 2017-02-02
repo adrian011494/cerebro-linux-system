@@ -4,7 +4,7 @@
 
 ## Usage
 
-In Cerebro, type command that you need and `enter` to execute it. List of available system commands:
+In Cerebro, type command or app name and that you need and `enter` to execute it. List of available system commands:
 
 * `Restart`
 * `Suspend`

@@ -1,6 +1,6 @@
 {
   "name": "cerebro-linux-system",
-  "version": "0.1.3",
+  "version": "0.2.1",
   "description": "Cerebro plugin to automate some Linux system features",
   "license": "MIT",
   "repository": "adrian011494/cerebro-linux-system",
@@ -35,5 +35,9 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "2.1.0-beta.27"
+
+  },
+  "dependencies": {
+    "string-search": "^1.2.0"
   }
 }
