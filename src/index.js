@@ -4,36 +4,21 @@ const { search, shellCommand } = require('cerebro-tools')
 
 const COMMANDS = {
   Restart: {
-    command: "osascript -e 'tell app \"loginwindow\" to «event aevtrrst»'",
+    command: "gksudo -m \"Reiniciar el sistema.\" reboot",
   },
-  Logout: {
-    command: "osascript -e 'tell app \"System Events\" to log out'",
+  Suspend: {
+    command: 'gksudo -m \"Suspender el sistema.\" pm-suspend',
   },
-  Sleep: {
-    command: 'pmset sleepnow',
-  },
-  Lock: {
-    command: '/System/Library/CoreServices/Menu\\ Extras/User.menu/Contents/Resources/CGSession -suspend',
+  Hibernate: {
+    command: 'gksudo -m \"Hibernar el sistema.\" pm-hibernate',
   },
   'Shut Down': {
-    command: "osascript -e 'tell app \"loginwindow\" to «event aevtrsdn»'",
-  },
-  'Screen Saver': {
-    command: 'open -a ScreenSaverEngine',
-  },
-  Trash: {
-    command: `open /Users/${process.env.USER}/.Trash`,
-    icon: '/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/TrashIcon.icns',
-    subtitle: 'Show trash'
-  },
-  'Empty Trash': {
-    command: `osascript -e 'tell app "Finder" to if (count of items in trash) > 0 then empty trash'`,
-    icon: '/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/TrashIcon.icns',
+    command: "gksudo -m \"Apagar el sistema.\" poweroff",
   }
 }
 
 /**
- * Plugin for OSx system commands, like lock, screen saver, etc.
+ * Plugin for Linux system commands
  *
  * @param  {String} options.term
  * @param  {Function} options.display

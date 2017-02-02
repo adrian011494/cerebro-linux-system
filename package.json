@@ -1,13 +1,13 @@
 {
-  "name": "cerebro-osx-system",
-  "version": "0.0.5",
-  "description": "Cerebro plugin to automate some OSx system features",
+  "name": "cerebro-linux-system",
+  "version": "0.0.1",
+  "description": "Cerebro plugin to automate some Linux system features",
   "license": "MIT",
   "repository": "KELiON/cerebro-osx-system",
   "author": {
-    "name": "Alexandr Subbotin",
-    "email": "kelionweb@gmail.com",
-    "url": "asubbotin.ru"
+    "name": "Adrian Arencibia Herrera",
+    "email": "adrian011494@gmail.com",
+    "url": "www.humanos.uci.cu"
   },
   "engines": {
     "node": ">=4"
