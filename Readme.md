@@ -2,6 +2,8 @@
 
 > [Cerebro](https://cerebroapp.com) plugin to automate some Linux system features
 
+![cerebro-linux-system](mygif.gif) 
+
 ## Usage
 
 In Cerebro, type command or app name and that you need and `enter` to execute it. List of available system commands:
