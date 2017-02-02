@@ -17,3 +17,6 @@ In Cerebro, type command that you need and `enter` to execute it. List of availa
 - [Cerebro](http://github.com/KELiON/cerebro) – main repo for Cerebro app;
 
 
+## License
+
+MIT © 

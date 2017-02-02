@@ -1,13 +1,13 @@
 {
   "name": "cerebro-linux-system",
-  "version": "0.0.1",
+  "version": "0.1.3",
   "description": "Cerebro plugin to automate some Linux system features",
   "license": "MIT",
   "repository": "adrian011494/cerebro-linux-system",
   "author": {
     "name": "Adrian Arencibia Herrera",
     "email": "adrian011494@gmail.com",
-    "url": "www.humanos.uci.cu"
+    "url": "https://humanos.uci.cu"
   },
   "engines": {
     "node": ">=4"
@@ -19,10 +19,9 @@
   },
   "main": "dist/index.js",
   "keywords": [
-    "cerebro",
-    "cerebro-plugin"
+    "cerebro-plugin",
+    "cerebro"
   ],
-  "os" : ["darwin"],
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-loader": "^6.2.8",
