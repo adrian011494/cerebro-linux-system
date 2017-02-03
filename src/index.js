@@ -65,6 +65,50 @@ const COMMANDS = {
     command: "nmcli radio wifi off",
     subtitle: "Disable wifi"
 }
+,
+  '* 10%': {
+    command: "xrandr --output $(xrandr -q | grep ' connected' | head -n 1 | cut -d ' ' -f1) --brightness 0.1",
+    subtitle: "Brightness 10%"
+}
+,
+  '* 20%': {
+    command: "xrandr --output $(xrandr -q | grep ' connected' | head -n 1 | cut -d ' ' -f1) --brightness 0.2",
+    subtitle: "Brightness 20%"
+}
+,
+  '* 30%': {
+    command: "xrandr --output $(xrandr -q | grep ' connected' | head -n 1 | cut -d ' ' -f1) --brightness 0.3",
+    subtitle: "Brightness 30%"
+}
+,
+  '* 40%': {
+    command: "xrandr --output $(xrandr -q | grep ' connected' | head -n 1 | cut -d ' ' -f1) --brightness 0.4",
+    subtitle: "Brightness 40%"
+},
+  '* 50%': {
+    command: "xrandr --output $(xrandr -q | grep ' connected' | head -n 1 | cut -d ' ' -f1) --brightness 0.5",
+    subtitle: "Brightness 50%"
+},
+  '* 60%': {
+    command: "xrandr --output $(xrandr -q | grep ' connected' | head -n 1 | cut -d ' ' -f1) --brightness 0.6",
+    subtitle: "Brightness 60%"
+},
+  '* 70%': {
+    command: "xrandr --output $(xrandr -q | grep ' connected' | head -n 1 | cut -d ' ' -f1) --brightness 0.7",
+    subtitle: "Brightness 70%"
+},
+  '* 80%': {
+    command: "xrandr --output $(xrandr -q | grep ' connected' | head -n 1 | cut -d ' ' -f1) --brightness 0.8",
+    subtitle: "Brightness 80%"
+},
+  '* 90%': {
+    command: "xrandr --output $(xrandr -q | grep ' connected' | head -n 1 | cut -d ' ' -f1) --brightness 0.9",
+    subtitle: "Brightness 90%"
+},
+  '* 100%': {
+    command: "xrandr --output $(xrandr -q | grep ' connected' | head -n 1 | cut -d ' ' -f1) --brightness 1",
+    subtitle: "Brightness 100%"
+}
 }
 
 
