@@ -56,6 +56,15 @@ const COMMANDS = {
     command: "amixer -D pulse set Master unmute;amixer set Master 50-",
     subtitle: "Volume -50%"
 }
+,
+  'wifi on': {
+    command: "nmcli radio wifi on",
+    subtitle: "Enable wifi"
+},
+  'wifi off': {
+    command: "nmcli radio wifi off",
+    subtitle: "Disable wifi"
+}
 }
 
 
