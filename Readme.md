@@ -6,13 +6,28 @@
 
 ## Usage
 
-In Cerebro, type command or app name and that you need and `enter` to execute it. List of available system commands:
+In Cerebro, type command or app name and that you need and `enter` to execute it. 
 
+### List of available system commands:
+#### Power control
 * `Restart`
-* `Suspend`
-* `Hibernate`
+* `Sleep`
 * `Shut Down`
 
+#### Volume control
+* `! mute` Turn off the volume
+* `! unmute` Turn on the volume
+* `! 100%` Set the volume to 100%
+* `! (+|++|+++)` Increase volume by (10|30|50)%
+* `! (-|--|---)` Decrease volume by (10|30|50)%
+
+
+#### Wifi control
+* `wifi on` Turn on the wifi
+* `wifi off` Turn off the wifi
+
+#### Brightness control
+* `* (10|20|30|40|50|60|70|80|90|100)%` Set the Brightness to seleced %
 
 ## Related
 
