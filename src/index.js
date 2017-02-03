@@ -6,17 +6,56 @@ const { search, shellCommand } = require('cerebro-tools')
 
 const COMMANDS = {
   Restart: {
-    command: "gksudo -m \"Reiniciar el sistema.\" reboot",
+    command: "systemctl reboot",
   },
-  Suspend: {
-    command: 'gksudo -m \"Suspender el sistema.\" pm-suspend',
-  },
-  Hibernate: {
-    command: 'gksudo -m \"Hibernar el sistema.\" pm-hibernate',
+  Sleep: {
+    command: 'systemctl suspend',
   },
   'Shut Down': {
-    command: "gksudo -m \"Apagar el sistema.\" poweroff",
-  }
+    command: "systemctl poweroff",
+  },
+  'Empty Trash': {
+    command: "rm -rf ~/.local/share/Trash/*"
+},
+  '! mute': {
+    command: "amixer -D pulse set Master mute",
+    subtitle: "Volume off"
+},
+  '! unmute': {
+    command: "amixer -D pulse set Master unmute",
+    subtitle: "Volume on"
+}
+,
+  '! +': {
+    command: "amixer -D pulse set Master unmute;amixer set Master 10+",
+    subtitle: "Volume +10%"
+},
+  '! ++': {
+    command: "amixer -D pulse set Master unmute;amixer set Master 30+",
+    subtitle: "Volume +30%"
+}
+,
+  '! +++': {
+    command: "amixer -D pulse set Master unmute;amixer set Master 50+",
+    subtitle: "Volume +50%"
+},
+  '! 100%': {
+    command: "amixer -D pulse set Master unmute;amixer set Master 100+",
+    subtitle: "Volume 100%"
+},
+  '! -': {
+    command: "amixer -D pulse set Master unmute;amixer set Master 10-",
+    subtitle: "Volume -10%"
+},
+  '! --': {
+    command: "amixer -D pulse set Master unmute;amixer set Master 30-",
+    subtitle: "Volume -30%"
+}
+,
+  '! ---': {
+    command: "amixer -D pulse set Master unmute;amixer set Master 50-",
+    subtitle: "Volume -50%"
+}
 }
 
 
