@@ -4,6 +4,8 @@ var stringSearcher = require('string-search');
 const ejectIcon = require('./eject.png');
 const pendriveIcon = require('./pendrive.png');
 
+
+
 const { search, shellCommand } = require('cerebro-tools')
 var usb = [];
 const COMMANDS = {
@@ -138,26 +140,27 @@ const fn = ({ term, display }) => {
 
   const match = /eject\s(.*)/.exec(term);
   if (match) {
-    
+
+
     shellCommand('lsblk -J -p -o name,label,size,type,state,rm,hotplug,mountpoint')
       .then((output) => {
-        var partitios = JSON.parse(output);
-        for (var attributename in partitios.blockdevices) {
-          //console.log(partitios.blockdevices[attributename]);
-          for (var c in partitios.blockdevices[attributename].children) {
-            //console.log(partitios.blockdevices[attributename].children[c]);
+         var partitios = JSON.parse(output);
+                for (var attributename in partitios.blockdevices) {
+                  //console.log(partitios.blockdevices[attributename]);
+                  for (var c in partitios.blockdevices[attributename].children) {
+                    //console.log(partitios.blockdevices[attributename].children[c]);
+        
+                    if (partitios.blockdevices[attributename].children[c].mountpoint != null &&
+                      partitios.blockdevices[attributename].children[c].rm == "1") {
+                      console.log(partitios.blockdevices[attributename].children[c]);
+                      usb.push(partitios.blockdevices[attributename].children[c]);
+                      showMy(display);
+                    }
+                  }
+        
+                }
 
-            if (partitios.blockdevices[attributename].children[c].mountpoint != null &&
-              partitios.blockdevices[attributename].children[c].rm == "1") {
-              console.log(partitios.blockdevices[attributename].children[c]);
-              usb.push(partitios.blockdevices[attributename].children[c]);
-              showMy(display);
-            }
-          }
-
-        }
-
-        //console.log(a);
+        //console.log(output);
       });
 
 
@@ -173,8 +176,9 @@ function showMy(display) {
       title: 'Eject All',
       subtitle: 'Unmount and eject all external disks and partitions',
       onSelect: () => usb.forEach(ejectDrive)
-    }].concat(usb.map(({ label, mountpoint, size }) => ({      
-      title: label+" "+size,
+    }].concat(usb.map(({ label, mountpoint, size }) => ({
+      icon: pendriveIcon,
+      title: label + " " + size,
       subtitle: `Unmount and eject ${mountpoint} `,
       onSelect: () => ejectDrive({ mountpoint, label })
     }))));
@@ -184,7 +188,7 @@ function showMy(display) {
 
 function ejectDrive({ mountpoint, label }) {
 
-  shellCommand('umount "'+mountpoint+'"').then(() => {
+  shellCommand('umount "' + mountpoint + '"').then(() => {
     new Notification('Drive Ejected', {
       body: `${label} has been ejected.`
     });
