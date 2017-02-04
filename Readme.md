@@ -6,7 +6,7 @@
 
 ## Usage
 
-In Cerebro, type command or app name and that you need and `enter` to execute it. 
+In Cerebro, type command that you need and `enter` to execute it. 
 
 ### List of available system commands:
 #### Power control
@@ -26,6 +26,10 @@ In Cerebro, type command or app name and that you need and `enter` to execute it
 * `wifi on` Turn on the wifi
 * `wifi off` Turn off the wifi
 
+#### Pendrive  control
+* `eject (name)` Unmount and eject pendrive
+
+
 #### Brightness control
 * `* (10|20|30|40|50|60|70|80|90|100)%` Set the Brightness to seleced %
 
@@ -37,3 +41,4 @@ In Cerebro, type command or app name and that you need and `enter` to execute it
 ## License
 
 MIT © 
+
