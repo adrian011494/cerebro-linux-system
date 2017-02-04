@@ -40,5 +40,4 @@ In Cerebro, type command that you need and `enter` to execute it.
 
 ## License
 
-MIT © 
-
+MIT © Adrian Arencibia Herrera
