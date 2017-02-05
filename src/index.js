@@ -151,8 +151,8 @@ const fn = ({ term, display }) => {
                     //console.log(partitios.blockdevices[attributename].children[c]);
         
                     if (partitios.blockdevices[attributename].children[c].mountpoint != null &&
-                      partitios.blockdevices[attributename].children[c].rm == "1") {
-                      console.log(partitios.blockdevices[attributename].children[c]);
+                      partitios.blockdevices[attributename].children[c].hotplug == "1") {
+                     // console.log(partitios.blockdevices[attributename].children[c]);
                       usb.push(partitios.blockdevices[attributename].children[c]);
                       showMy(display);
                     }
@@ -173,12 +173,14 @@ function showMy(display) {
   if (usb.length) {
     display([{
       icon: ejectIcon,
+      term: 'eject all',
       title: 'Eject All',
       subtitle: 'Unmount and eject all external disks and partitions',
       onSelect: () => usb.forEach(ejectDrive)
     }].concat(usb.map(({ label, mountpoint, size }) => ({
       icon: pendriveIcon,
-      title: label + " " + size,
+      
+      title: (label==null?"":label) + " " + size,
       subtitle: `Unmount and eject ${mountpoint} `,
       onSelect: () => ejectDrive({ mountpoint, label })
     }))));
@@ -190,7 +192,7 @@ function ejectDrive({ mountpoint, label }) {
 
   shellCommand('umount "' + mountpoint + '"').then(() => {
     new Notification('Drive Ejected', {
-      body: `${label} has been ejected.`
+      body: `${label==null?"Drive":label} has been ejected.`
     });
   });
 }
