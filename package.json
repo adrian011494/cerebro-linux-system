@@ -1,6 +1,6 @@
 {
   "name": "cerebro-linux-system",
-  "version": "0.2.3",
+  "version": "0.2.8",
   "description": "Cerebro plugin to automate some Linux system features",
   "license": "MIT",
   "repository": "adrian011494/cerebro-linux-system",
@@ -30,15 +30,10 @@
     "babili": "0.0.9",
     "cerebro-tools": "^0.1.0",
     "css-loader": "^0.26.0",
-    "raw-loader": "^0.5.1",
     "react": "^15.4.1",
     "style-loader": "^0.13.1",
-    "url-loader": "^0.5.7",
-    "webpack": "2.1.0-beta.27"
-  },
-  "dependencies": {
-    "drivelist": "^5.0.9",
-    "file-loader": "^0.10.0",
-    "string-search": "^1.2.0"
+    "webpack": "2.1.0-beta.27",
+    "file-loader":"0.10.0",
+    "url-loader":"0.5.7"
   }
 }

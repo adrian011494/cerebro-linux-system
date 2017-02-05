@@ -1,13 +1,11 @@
 /* eslint max-len: [0] */
-var fs = require('fs');
-var stringSearcher = require('string-search');
 const ejectIcon = require('./eject.png');
 const pendriveIcon = require('./pendrive.png');
 
-
+var usb = [];
 
 const { search, shellCommand } = require('cerebro-tools')
-var usb = [];
+
 const COMMANDS = {
   Restart: {
     command: "systemctl reboot",
@@ -139,8 +137,8 @@ const fn = ({ term, display }) => {
   }
 
   const match = /eject\s(.*)/.exec(term);
-  if (match) {
-
+  if (term =="eject"||match) {
+   usb = [];
 
     shellCommand('lsblk -J -p -o name,label,size,type,state,rm,hotplug,mountpoint')
       .then((output) => {
@@ -173,7 +171,7 @@ function showMy(display) {
   if (usb.length) {
     display([{
       icon: ejectIcon,
-      term: 'eject all',
+      
       title: 'Eject All',
       subtitle: 'Unmount and eject all external disks and partitions',
       onSelect: () => usb.forEach(ejectDrive)
